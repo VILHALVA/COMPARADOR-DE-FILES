@@ -118,29 +118,13 @@ Este app foi criado **às pressas**, mas já me **salvou de inúmeros problemas 
 #### PASSO 2: CRIAR O INSTALADOR:
 > **IMPORTANTE:** Antes de criar o novo instalador, certifique-se de excluir o arquivo `./APP/COMPARADOR DE FILES.exe`.
 
-1. **Editar o arquivo do instalador**
-   No diretório `./CODIGO`, abra o arquivo `INSTALADOR.iss` e atualize os seguintes trechos:
+1. **Editar o arquivo do instalador:**
+   * No diretório `./CODIGO`, abra o arquivo `INSTALADOR.iss` e atualize o seguinte trecho:
 
-   * **Versão do Aplicativo:**
-      Atualize o valor da linha `MyAppVersion` com a nova versão do aplicativo.Exemplo:
-
-      ```ini
-      #define MyAppVersion "1.0"
-      ```
-
-   * **Ícone do instalador:**
-     Substitua o caminho atual da linha `SetupIconFile=` pelo caminho correto do seu ícone:
+   * Localize a diretiva `#define Diretorio` e substitua pelo caminho correto do diretório do projeto. Exemplo:
 
      ```ini
-     SetupIconFile=C:\Users\HP\Downloads\GITHUB\REPOSITORIO\02-PROJETOS PUBLICOS\02-APLICATIVOS\COMPARADOR DE FILES\CODIGO\imagem.ico
-     ```
-
-   * **Caminho do executável a ser empacotado:**
-     Atualize a seção `[Files]` com o caminho do executável gerado:
-
-     ```ini
-     [Files]
-     Source: "C:\Users\HP\Downloads\GITHUB\REPOSITORIO\02-PROJETOS PUBLICOS\02-APLICATIVOS\COMPARADOR DE FILES\CODIGO\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+     #define Diretorio "C:\Users\HP\Downloads\GITHUB\REPOSITORIO\02-PROJETOS PUBLICOS\02-APLICATIVOS\COMPARADOR DE FILES\CODIGO"
      ```
 
 2. **Gerar o instalador no Inno Setup:**
